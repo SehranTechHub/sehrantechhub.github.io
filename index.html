@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <title>thatstudio</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link href="styles/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            /* Prevent scrolling */
+        }
+
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        #video-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            opacity: 0.3;
+            /* Adjust the opacity as needed (0.0 to 1.0) */
+        }
+
+        /* CSS */
+        .button-27 {
+            appearance: none;
+            background-color: #000000;
+            border: 2px solid #1A1A1A;
+            border-radius: 20px;
+            box-sizing: border-box;
+            color: #FFFFFF;
+            cursor: pointer;
+            display: inline-block;
+            font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            font-size: 16px;
+            font-weight: 600;
+            line-height: normal;
+            margin: 0;
+            /* min-height: 60px; */
+            min-width: 0;
+            outline: none;
+            padding: 10px 16px;
+            text-align: center;
+            text-decoration: none;
+            transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            /* width: 100%; */
+            will-change: transform;
+            opacity: 0;
+            /* Initially hidden */
+            transform: translateY(-50px);
+            /* Initially above */
+        }
+
+        .button-27:disabled {
+            pointer-events: none;
+        }
+
+        .button-27:hover {
+            box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+            transform: translateY(-2px);
+        }
+
+        .button-27:active {
+            box-shadow: none;
+            transform: translateY(0);
+        }
+
+
+        .loader-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+
+        }
+
+        .loader {
+            animation: spin 2s linear infinite;
+            /* width: 100px; */
+            /* Adjust the size of the logo */
+            /* height: 100px; */
+            /* Adjust the size of the logo */
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loader-container">
+        <img src="images/thatstudio_logo.png" height="50" width=auto alt="Website Logo" class="loader">
+    </div>
+
+    <div class="video-container">
+        <video autoplay muted loop id="video-bg">
+            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div style="display: flex; justify-content: center; align-items: center;height:100vh ; flex-direction: column;">
+        <div class="container">
+            <img src="images/thatstudio_logo.png" width="70%" height="auto"
+                style="opacity: 0; transform: translateY(-50px)" alt="Website Logo" class="content-item img-fluid">
+            <h4 style="opacity: 0; color: #999999;font-family: Arial, Helvetica, sans-serif;font-weight: bold;"
+                class="content-item">A Malaysian based production house that consists of young
+                passionate creatives.</h4>
+            <h4 style="opacity: 0; color: #999999;font-family: Arial, Helvetica, sans-serif;font-weight: bold;margin-top: 0;"
+                class="content-item">We are that studio.</h4>
+            <a href="outwork.html" style="opacity: 0;width: 150px;margin-top: 20px;" class="button-27 content-item">Our
+                Work</a>
+        </div>
+
+        <!-- <img src="images/thatstudio_logo.png">
+        <h3 style="color: #999999;font-family: Arial, Helvetica, sans-serif;font-weight: bold;">A Malaysian based
+            production house that consists of young passionate creatives. We are that studio.</h3>
+        <h3 style="color: #999999;font-family: Arial, Helvetica, sans-serif;font-weight: bold;margin-top: 0;">We are
+            that studio.</h3>
+        <button style="width: 150px;" class="button-27" role="button">Our Work</button> -->
+
+    </div>
+</body>
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+        var video = document.getElementById('video-bg');
+
+        video.addEventListener('loadeddata', function () {
+            // Video has finished loading, hide the loader
+            var loaderContainer = document.querySelector('.loader-container');
+            var videoContainer = document.querySelector('.video-container');
+            var contentItems = document.querySelectorAll('.content-item');
+
+            loaderContainer.style.opacity = '0';
+            videoContainer.style.opacity = '1';
+
+            loaderContainer.style.display = 'none';
+
+            contentItems.forEach(function (item, index) {
+                setTimeout(function () {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                    item.style.transition = 'opacity 1s ease, transform 1s ease';
+                }, index * 500); // Delay each item's animation
+            });
+        });
+    });
+
+</script>
+
+</html>
