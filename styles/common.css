@@ -1,0 +1,76 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+}
+
+.nav-item a {
+    color: #aaaaaa
+}
+
+.nav-link {
+    font-weight: bold;
+}
+
+.offcanvas-h4 {
+    color: #aaaaaa;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.offcanvas-h4:hover {
+    color: black !important;
+}
+
+.offcanvas-body .active {
+    color: black;
+}
+
+.offcanvas-body a {
+    text-decoration: none;
+}
+
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.title-container h1 {
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: auto;
+}
+
+
+.loader-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+
+}
+
+.loader {
+    animation: spin 2s linear infinite;
+}
+
+.back-button {
+    text-decoration: none;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
