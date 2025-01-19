@@ -1,4 +1,16 @@
-body,
+@font-face {
+    font-family: 'ProductSans';
+    src: url('../fonts/ProductSans-Regular.ttf');
+}
+
+body {
+    font-family: 'ProductSans';
+}
+
+h1 {
+    font-family: 'ProductSans';
+}
+
 html {
     height: 100%;
     margin: 0;
