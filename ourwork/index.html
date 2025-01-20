@@ -296,7 +296,7 @@
         };
 
         // Group data into chunks of 3
-        const rows = chunkArray(data, 3);
+        const rows = chunkArray(data, 4);
 
         const rowDiv = document.createElement('div');
         rowDiv.className = 'row';
@@ -311,11 +311,11 @@
             rowItems.forEach(item => {
                 // Create the col-md-4 div
                 const colDiv = document.createElement('div');
-                colDiv.className = 'col-md-4';
+                colDiv.className = 'col-md-3';
                 colDiv.innerHTML = `
                 <div class="image-wrapper">
                     <img src="${item.imgSrc}" alt="${item.title}">
-                    <div class="image-title">${item.title}</div>
+                    <div class="image-title text-center">${item.title}</div>
                 </div>
             `;
 
