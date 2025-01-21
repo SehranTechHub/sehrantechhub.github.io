@@ -73,6 +73,23 @@ html {
     text-decoration: none;
 }
 
+
+
+
+@media (max-width: 768px) {
+    .header-logo {
+        padding-right: 8px;
+        padding-bottom: 8px;
+        padding-top: 8px;
+        /* padding: 8px; */
+    }
+
+    .navbar-padding{
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+}
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);
