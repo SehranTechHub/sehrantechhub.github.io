@@ -264,9 +264,11 @@
         <div class="about-us-wide">
             <p class="lead founder-bio" style="margin-bottom: 0;">we are that studio is a video production company based
                 in Malaysia
-                founded in 2024 by <span id="founder-name"
-                    style="font-weight: bold;text-decoration: underline;cursor: pointer;">Raja
-                    Kamachi</span>.
+                founded in 2024 by <a href="#" id="founder-name"
+                    style="font-weight: bold; text-decoration: underline; cursor: pointer;color:white">
+                    Raja Kamachi
+                </a>
+
             </p>
             <p class="lead founder-bio">Since then, the studio has been producing commercials, music videos, corporate
                 videos,
@@ -303,15 +305,28 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script>
-        // document.getElementById("founder-name").addEventListener("click", function () {
-        //     document.querySelector(".founder-section").scrollIntoView({ behavior: "smooth" });
+        // const founderName = document.getElementById("founder-name");
+        // const founderSection = document.querySelector(".founder-section");
+        // let previousScrollY = 0;
+        // let isAtFounder = false;
+
+        // founderName.addEventListener("click", function () {
+        //     if (!isAtFounder) {
+        //         previousScrollY = window.scrollY;
+        //         founderSection.scrollIntoView({ behavior: "smooth" });
+        //         isAtFounder = true;
+        //     } else {
+        //         window.scrollTo({ top: previousScrollY, behavior: "smooth" });
+        //         isAtFounder = false;
+        //     }
         // });
         const founderName = document.getElementById("founder-name");
         const founderSection = document.querySelector(".founder-section");
         let previousScrollY = 0;
         let isAtFounder = false;
 
-        founderName.addEventListener("click", function () {
+        founderName.addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent jumping to top due to href="#"
             if (!isAtFounder) {
                 previousScrollY = window.scrollY;
                 founderSection.scrollIntoView({ behavior: "smooth" });
