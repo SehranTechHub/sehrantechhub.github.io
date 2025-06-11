@@ -141,38 +141,38 @@
 </head>
 
 <body>
-    <div class="container-fluid" style="padding-left: 24px;padding-right: 24px;">
+    <!-- HEADER NAVBAR -->
+    <div class="container-fluid navbar-container" style="padding-left: 24px; padding-right: 24px;">
         <nav class="navbar navbar-expand-lg navbar-padding">
-            <!-- <div class="container-fluid"> -->
             <a class="navbar-brand" href="/">
-                <img class="header-logo" src="../img/thatstudio_logo.png" height="50" width="auto">
+                <img class="header-logo" src="../img/wearethatstudioregularlogo.png" height="25" width="auto">
             </a>
-            <div class="navbar-toggler" style="border: none;padding-right: 0;" data-bs-toggle="offcanvas"
+            <div class="navbar-toggler" style="border: none; padding-right: 0;" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                 <span class="navbar-toggler-icon"></span>
             </div>
-
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="gap: 30px">
-
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/ourwork">OUR WORKS</a>
+                        <a class="nav-link" href="/ourwork">OUR WORKS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="https://www.instagram.com/wearethatstudio/"
+                        <a class="nav-link" href="https://www.instagram.com/wearethatstudio/"
                             target="_blank">SOCIALS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/contactus">CONTACT US</a>
+                        <a class="nav-link" href="/aboutus/">ABOUT US</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/contactus">CONTACT US</a>
                     </li>
                 </ul>
             </div>
-            <!-- </div> -->
         </nav>
 
+        <!-- OFFCANVAS MENU -->
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
             <div class="offcanvas-header">
-                <!-- <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5> -->
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
@@ -187,13 +187,20 @@
                     </a>
                 </div>
                 <div class="text-center mb-4">
-                    <a href="/contactus">
-                        <h4 class="offcanvas-h4 active">CONTACT US</h4>
+                    <a href="/aboutus">
+                        <h4 class="offcanvas-h4">ABOUT US</h4>
                     </a>
                 </div>
+                <div class="text-center mb-4">
+                    <a href="/contactus">
+                        <h4 class="offcanvas-h4">CONTACT US</h4>
+                    </a>
+                </div>
+
             </div>
         </div>
     </div>
+
     <div class="contact-container">
         <h1>Contact Us</h1>
         <p>We would love to hear from you. Please fill out the form below:</p>
